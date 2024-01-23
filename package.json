@@ -1,0 +1,51 @@
+{
+  "name": "medias-system-managament",
+  "version": "1.0.0",
+  "description": "Media Solutions System Managament desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "builder": "electron-builder --win"
+  },
+  "build": {
+    "productName": "Media Solutions 1.0",
+    "appId": "medias",
+    "directories": {
+      "output": "../medias_dist"
+    },
+    "files": [
+      "**/*",
+      "!diss/**"
+    ],
+    "win": {
+      "artifactName": "${productName}_Setup_${version}-${arch}.${ext}",
+      "icon": "images/logo.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "author": "Diyorbek",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "asar": "^3.2.0",
+    "electron": "^21.1.1",
+    "electron-builder": "^23.6.0",
+    "electron-packager": "^17.1.1"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "electron-store": "^8.1.0",
+    "electron-window-state": "^5.0.3",
+    "express": "^4.18.2",
+    "node-macaddress": "^0.2.4"
+  }
+}
